@@ -10,27 +10,649 @@
 
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <style>
+    /* Google Translate Widget style */
+    #google_translate_element {
+      margin-top: 10px;
+      font-size: 20px;
+      display: inline-block;
+      background: rgba(255,255,255,0.95);
+      padding: 8px 12px;
+      border-radius: 6px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+      transition: all 0.3s ease;
+    }
+
+    #google_translate_element:hover {
+      box-shadow: 0 5px 12px rgba(0,0,0,0.35);
+      transform: translateY(-2px);
+    }
+
+    .goog-te-gadget-simple {
+      border: none !important;
+      background-color: transparent !important;
+      font-size: 20px !important;
+    }
+
+    .goog-te-gadget-simple span {
+      color: #000 !important;
+    }
+
+    /* Embedded project files style */
+    .project-file {
+      margin: 20px 0;
+      padding: 15px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .project-file h3 {
+      margin-bottom: 10px;
+    }
+
+    iframe, video {
+      width: 100%;
+      border-radius: 4px;
+    }
+
+    /* Contact form styling */
+    #contactForm input, #contactForm textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    #contactForm button {
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body class="dark">
 
 <!-- Theme Toggle Button -->
-<button id="themeToggle" style="position: fixed; top: 10px; right: 10px; z-index: 999;">🌙</button>
+<button id="themeToggle" style="margin-top: 10px;">🌙</button>
 
-<!-- Google Translate Widget (overlay / responsive) -->
-<div id="google_translate_element" 
-     style="
-        position: fixed;
-        top: 60px; 
-        right: 10px; 
-        z-index: 999; 
-        background: rgba(255,255,255,0.9); 
-        padding: 5px 10px; 
-        border-radius: 5px;
-        font-size: 16px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-     ">
+<!-- Google Translate Widget -->
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 
+      'google_translate_element'
+    );
+  }
+</script>
+<script type="text/javascript" 
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<header class="hero">
+
+  <div class="terminal" id="terminal"></div>
+
+  <!-- PROFILE IMAGE -->
+  <div class="profile-wrapper">
+    <img src="assets/me.jpg" alt="My Photo" class="profile-pic">
+  </div>
+
+  <h1>Md Aminul Islam</h1>
+  <p>Diploma Engineer | Junior Penetration Tester</p>
+
+  <!-- CV DOWNLOAD -->
+  <a href="assets/amin.pdf" class="cv-btn" download>⬇ Download CV</a>
+
+</header>
+
+<section>
+  <h2>About Me</h2>
+  <p>
+    I am a motivated junior penetration tester with a strong interest in cybersecurity
+    and hands-on experience in electrical wiring and CCTV installation.
+  </p>
+</section>
+
+<section>
+  <h2>Work Experience</h2>
+  <ul>
+    <li>
+      <strong>Junior Penetration Tester (Intern)</strong><br>
+      05/01/2026 – Present<br>
+      Byte Capsule Ltd, Dhaka, Bangladesh
+    </li>
+    <li>
+      <strong>Sub Assistant Engineer</strong><br>
+      15/04/2009 – 11/09/2009<br>
+      Rural Services Foundation, Dhaka
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>My Skills</h2>
+  <ul>
+    <li>Basic Web Penetration Testing</li>
+    <li>Vulnerability Scanning</li>
+    <li>OWASP Top 10 Awareness</li>
+    <li>Linux Fundamentals</li>
+    <li>Networking Basics</li>
+    <li>WiFi Security Testing</li>
+    <li>Nmap, Burp Suite, Wireshark (Basic)</li>
+    <li>Electrical Wiring & CCTV Installation</li>
+    <li>Solar Panel Installation</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Projects / Reports</h2>
+
+  <!-- Example embedded PDF -->
+  <div class="project-file">
+    <h3>Project 1 – Security Report (PDF)</h3>
+    <iframe src="uploads/Report.pdf" height="500px"></iframe>
+  </div>
+
+  <!-- Example embedded Video -->
+  <div class="project-file">
+    <h3>Project 1 – Demo Video</h3>
+    <video controls>
+      <source src="uploads/project1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Add more projects similarly -->
+</section>
+
+<section>
+  <h2>Build Connection With Me</h2>
+
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="text" name="subject" placeholder="Subject" required>
+    <textarea name="message" placeholder="Message Body" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<div class="social-float">
+  <a href="https://wa.me/393512578761" target="_blank" title="WhatsApp">💬</a>
+  <a href="https://t.me/Nothingsecure12" target="_blank" title="Telegram">✈️</a>
 </div>
+
+<footer>
+  © 2026 Md Aminul Islam | Portfolio
+</footer>
+
+<!-- JS -->
+<script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md Aminul Islam | Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+
+<body class="dark">
+
+ <!-- Theme Toggle Button -->
+<button id="themeToggle">🌙</button>
+
+<!-- Google Translate Widget -->
+<div id="google_translate_element" 
+     style="margin-top: 10px; font-size: 18px; display: inline-block;"></div>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 
+      'google_translate_element'
+    );
+  }
+</script>
+<script type="text/javascript" 
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<header class="hero">
+
+  <div class="terminal" id="terminal"></div>
+
+  <!-- PROFILE IMAGE -->
+  <div class="profile-wrapper">
+    <img src="assets/me.jpg" alt="My Photo" class="profile-pic">
+  </div>
+
+  <h1>Md Aminul Islam</h1>
+  <p>Diploma Engineer | Junior Penetration Tester</p>
+
+  <!-- CV DOWNLOAD -->
+  <a href="assets/amin.pdf" class="cv-btn" download>⬇ Download CV</a>
+
+</header>
+
+<section>
+  <h2>About Me</h2>
+  <p>
+    I am a motivated junior penetration tester with a strong interest in cybersecurity
+    and hands-on experience in electrical wiring and CCTV installation.
+  </p>
+</section>
+
+<section>
+  <h2>Work Experience</h2>
+  <ul>
+    <li>
+      <strong>Junior Penetration Tester (Intern)</strong><br>
+      05/01/2026 – Present<br>
+      Byte Capsule Ltd, Dhaka, Bangladesh
+    </li>
+    <li>
+      <strong>Sub Assistant Engineer</strong><br>
+      15/04/2009 – 11/09/2009<br>
+      Rural Services Foundation, Dhaka
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>My Skills</h2>
+  <ul>
+    <li>Basic Web Penetration Testing</li>
+    <li>Vulnerability Scanning</li>
+    <li>OWASP Top 10 Awareness</li>
+    <li>Linux Fundamentals</li>
+    <li>Networking Basics</li>
+    <li>WiFi Security Testing</li>
+    <li>Nmap, Burp Suite, Wireshark (Basic)</li>
+    <li>Electrical Wiring & CCTV Installation</li>
+    <li>Solar Panel Installation</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Projects</h2>
+
+  <div class="project-row">
+    <div class="project-text">
+      <h3>Project 1 – Web Application Security Report</h3>
+      <a href="assets/Report.pdf" target="_blank" rel="noopener noreferrer">
+        Download Report
+      </a>
+      <p>Web penetration testing report.</p>
+    </div>
+
+    <video controls class="project-video">
+      <source src="videos/project1_fixed.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="project-row">
+    <div class="project-text">
+      <h3>Project 2 – Security Testing Report</h3>
+      <a href="assets/Report1.pdf" target="_blank" rel="noopener noreferrer">
+        Download Report
+      </a>
+      <p>Web security assessment documentation.</p>
+    </div>
+
+    <video controls class="project-video">
+      <source src="videos/project2.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<section>
+  <h2>Build Connection With Me</h2>
+
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="text" name="subject" placeholder="Subject" required>
+    <textarea name="message" placeholder="Message Body" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<div class="social-float">
+  <a href="https://wa.me/393512578761" target="_blank" title="WhatsApp">💬</a>
+  <a href="https://t.me/Nothingsecure12" target="_blank" title="Telegram">✈️</a>
+</div>
+
+<footer>
+  © 2026 Md Aminul Islam | Portfolio
+</footer>
+
+<!-- JS -->
+<script src="script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md Aminul Islam | Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+
+<body class="dark">
+
+ <!-- Theme Toggle Button -->
+<button id="themeToggle">🌙</button>
+
+<!-- Google Translate Widget -->
+<div id="google_translate_element" 
+     style="margin-top: 10px; font-size: 18px; display: inline-block;"></div>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 
+      'google_translate_element'
+    );
+  }
+</script>
+<script type="text/javascript" 
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<header class="hero">
+
+  <div class="terminal" id="terminal"></div>
+
+  <!-- PROFILE IMAGE -->
+  <div class="profile-wrapper">
+    <img src="assets/me.jpg" alt="My Photo" class="profile-pic">
+  </div>
+
+  <h1>Md Aminul Islam</h1>
+  <p>Diploma Engineer | Junior Penetration Tester</p>
+
+  <!-- CV DOWNLOAD -->
+  <a href="assets/amin.pdf" class="cv-btn" download>⬇ Download CV</a>
+
+</header>
+
+<section>
+  <h2>About Me</h2>
+  <p>
+    I am a motivated junior penetration tester with a strong interest in cybersecurity
+    and hands-on experience in electrical wiring and CCTV installation.
+  </p>
+</section>
+
+<section>
+  <h2>Work Experience</h2>
+  <ul>
+    <li>
+      <strong>Junior Penetration Tester (Intern)</strong><br>
+      05/01/2026 – Present<br>
+      Byte Capsule Ltd, Dhaka, Bangladesh
+    </li>
+    <li>
+      <strong>Sub Assistant Engineer</strong><br>
+      15/04/2009 – 11/09/2009<br>
+      Rural Services Foundation, Dhaka
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>My Skills</h2>
+  <ul>
+    <li>Basic Web Penetration Testing</li>
+    <li>Vulnerability Scanning</li>
+    <li>OWASP Top 10 Awareness</li>
+    <li>Linux Fundamentals</li>
+    <li>Networking Basics</li>
+    <li>WiFi Security Testing</li>
+    <li>Nmap, Burp Suite, Wireshark (Basic)</li>
+    <li>Electrical Wiring & CCTV Installation</li>
+    <li>Solar Panel Installation</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Projects</h2>
+
+  <div class="project-row">
+    <div class="project-text">
+      <h3>Project 1 – Web Application Security Report</h3>
+      <a href="assets/Report.pdf" target="_blank" rel="noopener noreferrer">
+        Download Report
+      </a>
+      <p>Web penetration testing report.</p>
+    </div>
+
+    <video controls class="project-video">
+      <source src="videos/project1_fixed.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="project-row">
+    <div class="project-text">
+      <h3>Project 2 – Security Testing Report</h3>
+      <a href="assets/Report1.pdf" target="_blank" rel="noopener noreferrer">
+        Download Report
+      </a>
+      <p>Web security assessment documentation.</p>
+    </div>
+
+    <video controls class="project-video">
+      <source src="videos/project2.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<section>
+  <h2>Build Connection With Me</h2>
+
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="text" name="subject" placeholder="Subject" required>
+    <textarea name="message" placeholder="Message Body" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<div class="social-float">
+  <a href="https://wa.me/393512578761" target="_blank" title="WhatsApp">💬</a>
+  <a href="https://t.me/Nothingsecure12" target="_blank" title="Telegram">✈️</a>
+</div>
+
+<footer>
+  © 2026 Md Aminul Islam | Portfolio
+</footer>
+
+<!-- JS -->
+<script src="script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md Aminul Islam | Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+
+<body class="dark">
+
+ <!-- Theme Toggle Button -->
+<button id="themeToggle">🌙</button>
+
+<!-- Google Translate Widget -->
+<div id="google_translate_element" 
+     style="margin-top: 10px; font-size: 18px; display: inline-block;"></div>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 
+      'google_translate_element'
+    );
+  }
+</script>
+<script type="text/javascript" 
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<header class="hero">
+
+  <div class="terminal" id="terminal"></div>
+
+  <!-- PROFILE IMAGE -->
+  <div class="profile-wrapper">
+    <img src="assets/me.jpg" alt="My Photo" class="profile-pic">
+  </div>
+
+  <h1>Md Aminul Islam</h1>
+  <p>Diploma Engineer | Junior Penetration Tester</p>
+
+  <!-- CV DOWNLOAD -->
+  <a href="assets/amin.pdf" class="cv-btn" download>⬇ Download CV</a>
+
+</header>
+
+<section>
+  <h2>About Me</h2>
+  <p>
+    I am a motivated junior penetration tester with a strong interest in cybersecurity
+    and hands-on experience in electrical wiring and CCTV installation.
+  </p>
+</section>
+
+<section>
+  <h2>Work Experience</h2>
+  <ul>
+    <li>
+      <strong>Junior Penetration Tester (Intern)</strong><br>
+      05/01/2026 – Present<br>
+      Byte Capsule Ltd, Dhaka, Bangladesh
+    </li>
+    <li>
+      <strong>Sub Assistant Engineer</strong><br>
+      15/04/2009 – 11/09/2009<br>
+      Rural Services Foundation, Dhaka
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>My Skills</h2>
+  <ul>
+    <li>Basic Web Penetration Testing</li>
+    <li>Vulnerability Scanning</li>
+    <li>OWASP Top 10 Awareness</li>
+    <li>Linux Fundamentals</li>
+    <li>Networking Basics</li>
+    <li>WiFi Security Testing</li>
+    <li>Nmap, Burp Suite, Wireshark (Basic)</li>
+    <li>Electrical Wiring & CCTV Installation</li>
+    <li>Solar Panel Installation</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Projects</h2>
+
+  <div class="project-row">
+    <div class="project-text">
+      <h3>Project 1 – Web Application Security Report</h3>
+      <a href="assets/Report.pdf" target="_blank" rel="noopener noreferrer">
+        Download Report
+      </a>
+      <p>Web penetration testing report.</p>
+    </div>
+
+    <video controls class="project-video">
+      <source src="videos/project1_fixed.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="project-row">
+    <div class="project-text">
+      <h3>Project 2 – Security Testing Report</h3>
+      <a href="assets/Report1.pdf" target="_blank" rel="noopener noreferrer">
+        Download Report
+      </a>
+      <p>Web security assessment documentation.</p>
+    </div>
+
+    <video controls class="project-video">
+      <source src="videos/project2.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<section>
+  <h2>Build Connection With Me</h2>
+
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="text" name="subject" placeholder="Subject" required>
+    <textarea name="message" placeholder="Message Body" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<div class="social-float">
+  <a href="https://wa.me/393512578761" target="_blank" title="WhatsApp">💬</a>
+  <a href="https://t.me/Nothingsecure12" target="_blank" title="Telegram">✈️</a>
+</div>
+
+<footer>
+  © 2026 Md Aminul Islam | Portfolio
+</footer>
+
+<!-- JS -->
+<script src="script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Md Aminul Islam | Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+
+<body class="dark">
+
+ <!-- Theme Toggle Button -->
+<button id="themeToggle">🌙</button>
+
+<!-- Google Translate Widget -->
+<div id="google_translate_element" 
+     style="margin-top: 10px; font-size: 18px; display: inline-block;"></div>
 
 <script type="text/javascript">
   function googleTranslateElementInit() {
